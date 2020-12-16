@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang='ja'>
+    <head>
+        <meta charset="UTF-8">
+        <title>graph simulator</title>
+        <meta name='description' content='visual simulation of matplotlib'>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel='stylesheet' href='../static/CSS/normalize.css'>
+        <link rel='stylesheet' href='../static/CSS/main.css'>
+    </head>
+
+    <body>
+        <div class='container'>
+            <div>
+                <h1>Graph Simulator</h1>
+                <p>このサイトでは，matplotlibを用いてグラフを作成する際の参考として様々な色の組み合わせを試すことができます。</p>
+                <p>まずはグラフの種類を選んでください。</p>
+                <p>グラフの種類：
+                    <select id=graph-type>
+                        <option value="scatter" selected>散布図</option>
+                        <option value="hist">ヒストグラム</option>
+                        <option value="line">折れ線</option>
+                    </select>
+                </p>
+            </div>
+
+            <div class='scatter'>
+                <div>
+                    <p>データの種類の個数を選んでください。</p>
+                    <p>種類数：
+                        <input type="number" id=scat-num max=3 min=1 value=2>
+                        ※1以上3以下
+                    </p>
+                </div>
+                <div class='scat-color'>
+                    <p>プロットする色を選んでください。</p>
+                    <p id='scat-data1'>データ1：
+                        <select id='scat-color1'>
+                            <option value='black'>black</option>
+                            <option value='lightgray'>lightgray</option>
+                            <option value='rosybrown'>rosybrown</option>
+                            <option value='lightcoral'>lightcoral</option>
+                            <option value='firebrick'>firebrick</option>
+                            <option value='maroon'>maroon</option>
+                            <option value='red' selected>red</option>
+                            <option value='salmon'>salmon</option>
+                            <option value='orangered'>orangered</option>
+                            <option value='chocolate'>chocolate</option>
+                            <oprion value='darkorange'>darkorange</oprion>
+                            <option value='goldenrod'>goldenrod</option>
+                            <option value='olive'>olive</option>
+                            <option value='chartreuse'>chartreuse</option>
+                            <option value='lightgreen'>lightgreen</option>
+                            <option value='green'>green</option>
+                            <option value='springgreen'>springgreen</option>
+                            <option value='turquoise'>turquoise</option>
+                            <option value='teal'>teal</option>
+                            <option value='skyblue'>skyblue</option>
+                            <option value='dodgerblue'>dodgerblue</option>
+                            <option value="navy">navy</option>
+                            <option value='blue'>blue</option>
+                            <option value='blueviolet'>blueviolet</option>
+                            <option value='purple'>purple</option>
+                        </select>
+                    </p>
+                    <p id='scat-data2'>データ2：
+                        <select id='scat-color2'>
+                            <option value='black'>black</option>
+                            <option value='lightgray'>lightgray</option>
+                            <option value='rosybrown'>rosybrown</option>
+                            <option value='lightcoral'>lightcoral</option>
+                            <option value='firebrick'>firebrick</option>
+                            <option value='maroon'>maroon</option>
+                            <option value='red' selected>red</option>
+                            <option value='salmon'>salmon</option>
+                            <option value='orangered'>orangered</option>
+                            <option value='chocolate'>chocolate</option>
+                            <oprion value='darkorange'>darkorange</oprion>
+                            <option value='goldenrod'>goldenrod</option>
+                            <option value='olive'>olive</option>
+                            <option value='chartreuse'>chartreuse</option>
+                            <option value='lightgreen'>lightgreen</option>
+                            <option value='green' selected>green</option>
+                            <option value='springgreen'>springgreen</option>
+                            <option value='turquoise'>turquoise</option>
+                            <option value='teal'>teal</option>
+                            <option value='skyblue'>skyblue</option>
+                            <option value='dodgerblue'>dodgerblue</option>
+                            <option value="navy">navy</option>
+                            <option value='blue'>blue</option>
+                            <option value='blueviolet'>blueviolet</option>
+                            <option value='purple'>purple</option>
+                        </select>
+                    </p>
+                    <p id='scat-data3'>データ3：
+                        <select id='scat-color3'>
+                            <option value='black'>black</option>
+                            <option value='lightgray'>lightgray</option>
+                            <option value='rosybrown'>rosybrown</option>
+                            <option value='lightcoral'>lightcoral</option>
+                            <option value='firebrick'>firebrick</option>
+                            <option value='maroon'>maroon</option>
+                            <option value='red'>red</option>
+                            <option value='salmon'>salmon</option>
+                            <option value='orangered'>orangered</option>
+                            <option value='chocolate'>chocolate</option>
+                            <oprion value='darkorange'>darkorange</oprion>
+                            <option value='goldenrod'>goldenrod</option>
+                            <option value='olive'>olive</option>
+                            <option value='chartreuse'>chartreuse</option>
+                            <option value='lightgreen'>lightgreen</option>
+                            <option value='green'>green</option>
+                            <option value='springgreen'>springgreen</option>
+                            <option value='turquoise'>turquoise</option>
+                            <option value='teal'>teal</option>
+                            <option value='skyblue'>skyblue</option>
+                            <option value='dodgerblue'>dodgerblue</option>
+                            <option value="navy">navy</option>
+                            <option value='blue' selected>blue</option>
+                            <option value='blueviolet'>blueviolet</option>
+                            <option value='purple'>purple</option>
+                        </select>
+                    </p>
+                </div>
+                <div>
+                    <p>下のボタンを押すとプロットできます。</p>
+                    <input type='button' id='scat-plot' value='plot'>
+                </div>
+            </div>
+
+            <div class='histogram'>
+                <div>
+                    <p>データの種類の個数を選んでください。</p>
+                    <p>種類数：
+                        <input type="number" id=hist-num max=3 min=1 value=2>
+                        ※1以上3以下
+                    </p>
+                </div>
+                <div class='hist-color'>
+                    <p>プロットする色を選んでください。</p>
+                    <p id='hist-data1'>データ1：
+                        <select id='hist-color1'>
+                            <option value='black'>black</option>
+                            <option value='lightgray'>lightgray</option>
+                            <option value='rosybrown'>rosybrown</option>
+                            <option value='lightcoral'>lightcoral</option>
+                            <option value='firebrick'>firebrick</option>
+                            <option value='maroon'>maroon</option>
+                            <option value='red' selected>red</option>
+                            <option value='salmon'>salmon</option>
+                            <option value='orangered'>orangered</option>
+                            <option value='chocolate'>chocolate</option>
+                            <oprion value='darkorange'>darkorange</oprion>
+                            <option value='goldenrod'>goldenrod</option>
+                            <option value='olive'>olive</option>
+                            <option value='chartreuse'>chartreuse</option>
+                            <option value='lightgreen'>lightgreen</option>
+                            <option value='green'>green</option>
+                            <option value='springgreen'>springgreen</option>
+                            <option value='turquoise'>turquoise</option>
+                            <option value='teal'>teal</option>
+                            <option value='skyblue'>skyblue</option>
+                            <option value='dodgerblue'>dodgerblue</option>
+                            <option value="navy">navy</option>
+                            <option value='blue'>blue</option>
+                            <option value='blueviolet'>blueviolet</option>
+                            <option value='purple'>purple</option>
+                        </select>
+                    </p>
+                    <p id='scat-data2'>データ2：
+                        <select id='hist-color2'>
+                            <option value='black'>black</option>
+                            <option value='lightgray'>lightgray</option>
+                            <option value='rosybrown'>rosybrown</option>
+                            <option value='lightcoral'>lightcoral</option>
+                            <option value='firebrick'>firebrick</option>
+                            <option value='maroon'>maroon</option>
+                            <option value='red' selected>red</option>
+                            <option value='salmon'>salmon</option>
+                            <option value='orangered'>orangered</option>
+                            <option value='chocolate'>chocolate</option>
+                            <oprion value='darkorange'>darkorange</oprion>
+                            <option value='goldenrod'>goldenrod</option>
+                            <option value='olive'>olive</option>
+                            <option value='chartreuse'>chartreuse</option>
+                            <option value='lightgreen'>lightgreen</option>
+                            <option value='green' selected>green</option>
+                            <option value='springgreen'>springgreen</option>
+                            <option value='turquoise'>turquoise</option>
+                            <option value='teal'>teal</option>
+                            <option value='skyblue'>skyblue</option>
+                            <option value='dodgerblue'>dodgerblue</option>
+                            <option value="navy">navy</option>
+                            <option value='blue'>blue</option>
+                            <option value='blueviolet'>blueviolet</option>
+                            <option value='purple'>purple</option>
+                        </select>
+                    </p>
+                    <p id='hist-data3'>データ3：
+                        <select id='hist-color3'>
+                            <option value='black'>black</option>
+                            <option value='lightgray'>lightgray</option>
+                            <option value='rosybrown'>rosybrown</option>
+                            <option value='lightcoral'>lightcoral</option>
+                            <option value='firebrick'>firebrick</option>
+                            <option value='maroon'>maroon</option>
+                            <option value='red'>red</option>
+                            <option value='salmon'>salmon</option>
+                            <option value='orangered'>orangered</option>
+                            <option value='chocolate'>chocolate</option>
+                            <oprion value='darkorange'>darkorange</oprion>
+                            <option value='goldenrod'>goldenrod</option>
+                            <option value='olive'>olive</option>
+                            <option value='chartreuse'>chartreuse</option>
+                            <option value='lightgreen'>lightgreen</option>
+                            <option value='green'>green</option>
+                            <option value='springgreen'>springgreen</option>
+                            <option value='turquoise'>turquoise</option>
+                            <option value='teal'>teal</option>
+                            <option value='skyblue'>skyblue</option>
+                            <option value='dodgerblue'>dodgerblue</option>
+                            <option value="navy">navy</option>
+                            <option value='blue' selected>blue</option>
+                            <option value='blueviolet'>blueviolet</option>
+                            <option value='purple'>purple</option>
+                        </select>
+                    </p>
+                </div>
+                <div class='hist-alpha'>
+                    <p>不透明度 (alpha) を決めてください。</p>
+                    <p>不透明度：
+                        <input type="number" id='hist-alpha-value' min=0 max=1 step=0.1 value=0.5>
+                        ※0で完全に透明，1で完全に不透明
+                    </p>
+                </div>
+                <div>
+                    <p>下のボタンを押すとプロットできます。</p>
+                    <input type='button' id='hist-plot' value='plot'>
+                </div>
+            </div>
+            <div class='image'>
+                <img id='plotimg'>
+                <h2>色の凡例</h2>
+                <img src='../static/colorpalette.png' width="800" height="500">
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="/static/JS/plotscat.js"></script>
+    <script type="text/javascript" src="/static/JS/plothist.js"></script>
+</html>
