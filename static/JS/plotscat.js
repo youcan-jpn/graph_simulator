@@ -2,7 +2,7 @@
 // Calculator
 //
 function plotscat() {
-    // Buid query parameter
+    // Build query parameter
     var param = {};
     param["scat-color1"] = document.getElementById("scat-color1").value;
     param["scat-color2"] = document.getElementById("scat-color2").value;

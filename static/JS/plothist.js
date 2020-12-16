@@ -2,7 +2,7 @@
 // Calculator
 //
 function plothist() {
-    // Buid query parameter
+    // Build query parameter
         var param = {};
         param["hist-color1"] = document.getElementById("hist-color1").value;
         param["hist-color2"] = document.getElementById("hist-color2").value;

@@ -84,5 +84,51 @@ def plot_hist():
     return "data:image/png:base64," + img_data
 
 
+@app.route('/plot/line')
+def plot_line():
+    fig, ax = plt.subplots(1, 1)
+
+    # obtain query parameters
+    curve1 = request.args.get('curve1', type=str)
+    curve2 = request.args.get('curve2', type=str)
+    curve3 = request.args.get('curve3', type=str)
+    curve_types = [curve1, curve2, curve3]
+    line_num = request.args.get('line-num', type=int)
+    line_c1 = request.args.get('line-color1', type=str)
+    line_c2 = request.args.get('line-color2', type=str)
+    line_c3 = request.args.get('line-color3', type=str)
+    line_colors = [line_c1, line_c2, line_c3]
+
+    # curves
+    x = np.linspace(-2, 2, 1000)
+    y1 = np.sin(x)
+    y2 = np.cos(x)
+    y3 = np.exp(x)
+    y4 = np.log(x)
+    y5 = np.sinh(x)
+    y6 = np.cosh(x)
+
+    for i in range(line_num):
+        if curve_types[i] == "sin":
+            ax.plot(x, y1, color=line_colors[i])
+        elif curve_types[i] == "cos":
+            ax.plot(x, y2, color=line_colors[i])
+        elif curve_types[i] == "exp":
+            ax.plot(x, y3, color=line_colors[i])
+        elif curve_types[i] == "log":
+            ax.plot(x, y4, color=line_colors[i])
+        elif curve_types[i] == "sinh":
+            ax.plot(x, y5, color=line_colors[i])
+        elif curve_types[i] == "cosh":
+            ax.plot(x, y6, color=line_colors[i])
+
+    png_out = BytesIO()
+
+    plt.savefig(png_out, format="png", bbox_inches="tight")
+    img_data = urllib.parse.quote(png_out.getvalue())
+
+    return "data:image/png:base64," + img_data
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

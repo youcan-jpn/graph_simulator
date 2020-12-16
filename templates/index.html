@@ -19,7 +19,7 @@
                     <select id=graph-type>
                         <option value="scatter" selected>散布図</option>
                         <option value="histogram">ヒストグラム</option>
-                        <option value="line">折れ線</option>
+                        <option value="line">曲線</option>
                     </select>
                 </p>
             </div>
@@ -238,6 +238,144 @@
                     <input type='button' id='hist-plot' value='plot'>
                 </div>
             </div>
+
+            <div id='line'>
+                <div>
+                    <p>曲線の本数を選んでください。</p>
+                    <p>本数：
+                        <input type="number" id=line-num max=3 min=1 value=2>
+                        ※1以上3以下
+                    </p>
+                </div>
+                <div>
+                    <p>曲線の種類を選んでください。</p>
+                    <p>曲線1：
+                        <select id='curve1'>
+                            <option value='sin'>sin</option>
+                            <option value='cos'>cos</option>
+                            <option value='exp'>exp</option>
+                            <option value='log'>log</option>
+                            <option value='sinh'>sinh</option>
+                            <option value='cosh'>cosh</option>
+                        </select>
+                    </p>
+                    <p>曲線2:
+                        <select id='curve2'>
+                            <option value='sin'>sin</option>
+                            <option value='cos'>cos</option>
+                            <option value='exp'>exp</option>
+                            <option value='log'>log</option>
+                            <option value='sinh'>sinh</option>
+                            <option value='cosh'>cosh</option>
+                        </select>
+                    </p>
+                    <p>曲線3:
+                        <select id='curve3'>
+                            <option value='sin'>sin</option>
+                            <option value='cos'>cos</option>
+                            <option value='exp'>exp</option>
+                            <option value='log'>log</option>
+                            <option value='sinh'>sinh</option>
+                            <option value='cosh'>cosh</option>
+                        </select>
+                    </p>
+                </div>
+                <div class='line-color'>
+                    <p>曲線の色を選んでください。</p>
+                    <p id='line-data1'>曲線1：
+                        <select id='line-color1'>
+                            <option value='black'>black</option>
+                            <option value='lightgray'>lightgray</option>
+                            <option value='rosybrown'>rosybrown</option>
+                            <option value='lightcoral'>lightcoral</option>
+                            <option value='firebrick'>firebrick</option>
+                            <option value='maroon'>maroon</option>
+                            <option value='red' selected>red</option>
+                            <option value='salmon'>salmon</option>
+                            <option value='orangered'>orangered</option>
+                            <option value='chocolate'>chocolate</option>
+                            <oprion value='darkorange'>darkorange</oprion>
+                            <option value='goldenrod'>goldenrod</option>
+                            <option value='olive'>olive</option>
+                            <option value='chartreuse'>chartreuse</option>
+                            <option value='lightgreen'>lightgreen</option>
+                            <option value='green'>green</option>
+                            <option value='springgreen'>springgreen</option>
+                            <option value='turquoise'>turquoise</option>
+                            <option value='teal'>teal</option>
+                            <option value='skyblue'>skyblue</option>
+                            <option value='dodgerblue'>dodgerblue</option>
+                            <option value="navy">navy</option>
+                            <option value='blue'>blue</option>
+                            <option value='blueviolet'>blueviolet</option>
+                            <option value='purple'>purple</option>
+                        </select>
+                    </p>
+                    <p id='line-data2'>曲線2：
+                        <select id='line-color2'>
+                            <option value='black'>black</option>
+                            <option value='lightgray'>lightgray</option>
+                            <option value='rosybrown'>rosybrown</option>
+                            <option value='lightcoral'>lightcoral</option>
+                            <option value='firebrick'>firebrick</option>
+                            <option value='maroon'>maroon</option>
+                            <option value='red' selected>red</option>
+                            <option value='salmon'>salmon</option>
+                            <option value='orangered'>orangered</option>
+                            <option value='chocolate'>chocolate</option>
+                            <oprion value='darkorange'>darkorange</oprion>
+                            <option value='goldenrod'>goldenrod</option>
+                            <option value='olive'>olive</option>
+                            <option value='chartreuse'>chartreuse</option>
+                            <option value='lightgreen'>lightgreen</option>
+                            <option value='green' selected>green</option>
+                            <option value='springgreen'>springgreen</option>
+                            <option value='turquoise'>turquoise</option>
+                            <option value='teal'>teal</option>
+                            <option value='skyblue'>skyblue</option>
+                            <option value='dodgerblue'>dodgerblue</option>
+                            <option value="navy">navy</option>
+                            <option value='blue'>blue</option>
+                            <option value='blueviolet'>blueviolet</option>
+                            <option value='purple'>purple</option>
+                        </select>
+                    </p>
+                    <p id='line-data3'>曲線3：
+                        <select id='line-color3'>
+                            <option value='black'>black</option>
+                            <option value='lightgray'>lightgray</option>
+                            <option value='rosybrown'>rosybrown</option>
+                            <option value='lightcoral'>lightcoral</option>
+                            <option value='firebrick'>firebrick</option>
+                            <option value='maroon'>maroon</option>
+                            <option value='red'>red</option>
+                            <option value='salmon'>salmon</option>
+                            <option value='orangered'>orangered</option>
+                            <option value='chocolate'>chocolate</option>
+                            <oprion value='darkorange'>darkorange</oprion>
+                            <option value='goldenrod'>goldenrod</option>
+                            <option value='olive'>olive</option>
+                            <option value='chartreuse'>chartreuse</option>
+                            <option value='lightgreen'>lightgreen</option>
+                            <option value='green'>green</option>
+                            <option value='springgreen'>springgreen</option>
+                            <option value='turquoise'>turquoise</option>
+                            <option value='teal'>teal</option>
+                            <option value='skyblue'>skyblue</option>
+                            <option value='dodgerblue'>dodgerblue</option>
+                            <option value="navy">navy</option>
+                            <option value='blue' selected>blue</option>
+                            <option value='blueviolet'>blueviolet</option>
+                            <option value='purple'>purple</option>
+                        </select>
+                    </p>
+                </div>
+                <div>
+                    <p>下のボタンを押すとプロットできます。</p>
+                    <input type='button' id='line-plot' value='plot'>
+                </div>
+            </div>
+
             <div class='image'>
                 <img id='plotimg'>
                 <h2>色の凡例</h2>
@@ -247,5 +385,6 @@
     </body>
     <script type="text/javascript" src="/static/JS/plotscat.js"></script>
     <script type="text/javascript" src="/static/JS/plothist.js"></script>
+    <script type="text/javascript" src="/static/JS/plotline.js"></script>
     <script type="text/javascript" src="/static/JS/viewcontrol.js"></script>
 </html>

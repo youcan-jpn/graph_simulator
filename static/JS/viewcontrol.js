@@ -1,6 +1,6 @@
 function changeView() {
     var target_value = document.getElementById('graph-type').value;
-    let graphs = ['scatter','histogram'];
+    let graphs = ['scatter','histogram','line'];
     for(let item of graphs) {
         if(item == target_value) {
             var display_item = document.getElementById(item);
