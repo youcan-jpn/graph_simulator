@@ -18,13 +18,13 @@
                 <p>グラフの種類：
                     <select id=graph-type>
                         <option value="scatter" selected>散布図</option>
-                        <option value="hist">ヒストグラム</option>
+                        <option value="histogram">ヒストグラム</option>
                         <option value="line">折れ線</option>
                     </select>
                 </p>
             </div>
 
-            <div class='scatter'>
+            <div id='scatter'>
                 <div>
                     <p>データの種類の個数を選んでください。</p>
                     <p>種類数：
@@ -128,7 +128,7 @@
                 </div>
             </div>
 
-            <div class='histogram hidden'>
+            <div id='histogram'>
                 <div>
                     <p>データの種類の個数を選んでください。</p>
                     <p>種類数：
@@ -167,7 +167,7 @@
                             <option value='purple'>purple</option>
                         </select>
                     </p>
-                    <p id='scat-data2'>データ2：
+                    <p id='hist-data2'>データ2：
                         <select id='hist-color2'>
                             <option value='black'>black</option>
                             <option value='lightgray'>lightgray</option>
@@ -247,4 +247,5 @@
     </body>
     <script type="text/javascript" src="/static/JS/plotscat.js"></script>
     <script type="text/javascript" src="/static/JS/plothist.js"></script>
+    <script type="text/javascript" src="/static/JS/viewcontrol.js"></script>
 </html>
