@@ -9,7 +9,7 @@ ul { padding-left: 0; }
 ul li { list-style-type: none; }
 a { color: inherit; text-decoration: none; }
 img { vertical-align: middle; }
-
+h1 {margin-bottom: 20px; }
 
 .container {
     background-color: rgb(238, 238, 238);
@@ -27,6 +27,17 @@ img { vertical-align: middle; }
 
 .image {
     text-align: center;
+}
+
+#plotimg {
+    padding: 5px;
+    background-color: dimgray;
+    -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+}
+
+#sample {
+    margin-top: 30px;
 }
 
 .hidden {
