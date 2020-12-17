@@ -40,6 +40,10 @@ h1 {margin-bottom: 20px; }
     margin-top: 30px;
 }
 
+#sample img {
+    width: 60%
+}
+
 .hidden {
     display: none;
 }
