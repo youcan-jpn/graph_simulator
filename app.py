@@ -51,6 +51,7 @@ def plot_scat():
     ax.set_ylim([0, 20])
 
     plt.savefig(png_out, format="png", bbox_inches="tight")
+    plt.close()
     img_data = urllib.parse.quote(png_out.getvalue())
 
     return "data:image/png:base64," + img_data
@@ -79,6 +80,7 @@ def plot_hist():
     png_out = BytesIO()
 
     plt.savefig(png_out, format="png", bbox_inches="tight")
+    plt.close()
     img_data = urllib.parse.quote(png_out.getvalue())
 
     return "data:image/png:base64," + img_data
@@ -125,6 +127,7 @@ def plot_line():
     png_out = BytesIO()
 
     plt.savefig(png_out, format="png", bbox_inches="tight")
+    plt.close()
     img_data = urllib.parse.quote(png_out.getvalue())
 
     return "data:image/png:base64," + img_data
